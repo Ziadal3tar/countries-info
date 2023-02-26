@@ -1,0 +1,81 @@
+nav {
+  box-shadow: 5px 8px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--nav-bgColor) !important;
+}
+button {
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+  background-color: var(--filter-bgColor) !important;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  color: var(--text-color);
+}
+
+.filter {
+  input {
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+    background-color: var(--input-bgColor) !important;
+  }
+
+  .dropdown {
+    button {
+      box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+      background-color: var(--filter-bgColor) !important;
+    }
+    .dropdown-menu{
+      --bs-dropdown-link-active-bg: hsl(0, 0%, 52%);;
+    }
+    .activeRegion{
+      background-color: hsl(0, 0%, 52%);;
+    }
+  }
+}
+
+
+
+
+
+.countryCard{
+
+  height: 350px;
+  .countryImg {
+background-position: center center;
+background-size: cover !important;
+    width: 100%;
+    height:calc(50% - 25px) ;
+    background: #000;
+  }
+  .countryDetails{
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+
+    background-color: var(--CD-bgColor);
+  }
+}
+
+
+
+
+.xx {
+  color: hsl(209, 23%, 22%);
+  color: hsl(207, 26%, 17%);
+  color: hsl(200, 15%, 8%);
+  color: hsl(0, 0%, 52%);
+  color: hsl(0, 0%, 98%);
+  color: hsl(0, 0%, 100%);
+}
+.countryDetailsDiv{
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.95);
+  z-index: 9 !important;
+  position: fixed;
+  .ss{
+        background-color: var(--countryDetailsDiv-bgColor) !important;
+  }
+}

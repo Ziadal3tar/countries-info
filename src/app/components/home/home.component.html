@@ -1,0 +1,63 @@
+<div class="countryDetailsDiv  d-flex align-items-center justify-content-center flex-column px-5"
+  [ngClass]="{'d-none': !openCountryDetails}">
+  <div class="ss w-100 vh-100 pt-5 d-flex flex-column justify-content-evenly">
+    <div>
+      <button class="col-2 offset-1  btn btn-light rounded-1 border-0" (click)="openCountryDetails = !openCountryDetails"> <i
+          class="bi bi-arrow-left"></i>back</button>
+    </div>
+    <app-country-details [dark]="dark" [country]="countryDetails"></app-country-details>
+
+  </div>
+</div>
+
+<nav class=" bg-white w-100 position-sticky fixed-top  py-2 mb-5 ">
+  <div class=" container d-flex align-items-center justify-content-between px-3">
+    <p class=" fw-bold fs-4">Where in the world</p>
+    <div>
+      <p #mood (click)="changeMood()"><i [ngClass]="dark?'bi-sun':'bi-moon'" class="bi me-2"></i>{{theMood}}</p>
+    </div>
+  </div>
+</nav>
+
+<section class=" container filter">
+  <div class="row d-flex align-items-center justify-content-between px-3">
+    <input type="text" (keyup)="searchByName()" [(ngModel)]="nameCountry" class=" border-0 px-3 py-2 rounded-1 col-4 "
+      placeholder="Search for a country">
+
+
+    <div class=" col-2 d-flex justify-content-end mb-5 ">
+      <div class="dropdown">
+        <button class="btn dropdown-toggle rounded-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Filter by Region
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item region" (click)="filterByRegion($event)">All</a></li>
+          <li><a class="dropdown-item region" (click)="filterByRegion($event)">Africa</a></li>
+          <li><a class="dropdown-item region" (click)="filterByRegion($event)">America</a></li>
+          <li><a class="dropdown-item region" (click)="filterByRegion($event)">Asia</a></li>
+          <li><a class="dropdown-item region" (click)="filterByRegion($event)">Europe</a></li>
+          <li><a class="dropdown-item region" (click)="filterByRegion($event)">Oceania</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class=" mt-4">
+  <div class=" container">
+    <div class="row">
+      <div *ngFor="let country of countries" [ngClass]="{'d-none': country.name.common=='Israel'}"
+        class=" col-3 px-3 my-4 countryCard cursorPointer" (click)="countryDetails = country"
+        (click)="openCountryDetails = !openCountryDetails">
+        <div class="countryImg" style="background-image: url({{country.flags.png}})"></div>
+        <div class="p-3 countryDetails ">
+          <h5>{{country.name.common}}</h5>
+          <p class="fw-bold">Population: <span class=" fw-normal opacity-75">{{country.population}}</span></p>
+          <p class="fw-bold">Region: <span class=" fw-normal opacity-75">{{country.region}}</span></p>
+          <p class="fw-bold">Capital: <span class=" fw-normal opacity-75">{{country.capital}}</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
