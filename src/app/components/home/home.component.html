@@ -1,8 +1,8 @@
-<div class="countryDetailsDiv  d-flex align-items-center justify-content-center flex-column px-5"
+<div class="countryDetailsDiv  d-flex align-items-center justify-content-center flex-column "
   [ngClass]="{'d-none': !openCountryDetails}">
   <div class="ss w-100 vh-100 pt-5 d-flex flex-column justify-content-evenly">
     <div>
-      <button class="col-2 offset-1  btn btn-light rounded-1 border-0" (click)="openCountryDetails = !openCountryDetails"> <i
+      <button class="col-6 offset-1 col-lg-2 offset-lg-1  btn btn-light rounded-1 border-0" (click)="openCountryDetails = !openCountryDetails"> <i
           class="bi bi-arrow-left"></i>back</button>
     </div>
     <app-country-details [dark]="dark" [country]="countryDetails"></app-country-details>
@@ -21,11 +21,10 @@
 
 <section class=" container filter">
   <div class="row d-flex align-items-center justify-content-between px-3">
-    <input type="text" (keyup)="searchByName()" [(ngModel)]="nameCountry" class=" border-0 px-3 py-2 rounded-1 col-4 "
+    <input type="text" (keyup)="searchByName()" [(ngModel)]="nameCountry" class=" border-0 px-3 py-2 rounded-1 col-12 col-md-4 "
       placeholder="Search for a country">
 
-
-    <div class=" col-2 d-flex justify-content-end mb-5 ">
+    <div class=" col-12 col-md-2 d-flex justify-content-end justify-content-md-start p-0 mt-2 mt-md-0">
       <div class="dropdown">
         <button class="btn dropdown-toggle rounded-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           Filter by Region
@@ -44,11 +43,11 @@
   </div>
 </section>
 
-<section class=" mt-4">
+<section class=" mt-4 ">
   <div class=" container">
     <div class="row">
       <div *ngFor="let country of countries" [ngClass]="{'d-none': country.name.common=='Israel'}"
-        class=" col-3 px-3 my-4 countryCard cursorPointer" (click)="countryDetails = country"
+        class=" col-12 col-sm-6 col-md-4 col-lg-3 px-3 my-4 countryCard cursorPointer" (click)="countryDetails = country"
         (click)="openCountryDetails = !openCountryDetails">
         <div class="countryImg" style="background-image: url({{country.flags.png}})"></div>
         <div class="p-3 countryDetails ">
