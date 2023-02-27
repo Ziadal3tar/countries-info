@@ -1,8 +1,8 @@
 <div class="countryDetailsDiv  d-flex align-items-center justify-content-center flex-column "
   [ngClass]="{'d-none': !openCountryDetails}">
-  <div class="ss w-100 vh-100 pt-5 d-flex flex-column justify-content-evenly">
+  <div class="div1 w-100 vh-100  d-flex flex-column justify-content-center">
     <div>
-      <button class="col-6 offset-1 col-lg-2 offset-lg-1  btn btn-light rounded-1 border-0" (click)="openCountryDetails = !openCountryDetails"> <i
+      <button class="col-6 offset-1 col-md-4 offset-md-1 col-lg-2 offset-lg-1  btn btn-light rounded-1 border-0 my-3" (click)="openCountryDetails = !openCountryDetails"> <i
           class="bi bi-arrow-left"></i>back</button>
     </div>
     <app-country-details [dark]="dark" [country]="countryDetails"></app-country-details>
@@ -14,7 +14,7 @@
   <div class=" container d-flex align-items-center justify-content-between px-3">
     <p class=" fw-bold fs-4">Where in the world</p>
     <div>
-      <p #mood (click)="changeMood()"><i [ngClass]="dark?'bi-sun':'bi-moon'" class="bi me-2"></i>{{theMood}}</p>
+      <p #mood class=" cursorPointer" (click)="changeMood()"><i [ngClass]="dark?'bi-sun':'bi-moon'" class="bi me-2"></i>{{theMood}}</p>
     </div>
   </div>
 </nav>

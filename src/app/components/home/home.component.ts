@@ -34,7 +34,7 @@ export class HomeComponent {
     );
     this.elementRef.nativeElement.style.setProperty(
       '--countryDetailsDiv-bgColor',
-      'white'
+      'hsl(0, 0%, 90%)'
     );
   }
   ngOnInit(): void {
