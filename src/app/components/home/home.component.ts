@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, ViewChild } from '@angular/core';
 import { RequestsService } from 'src/app/services/requests.service';
 @Component({
   selector: 'app-home',
@@ -131,4 +131,6 @@ export class HomeComponent {
       });
     }
   }
+
+ 
 }

@@ -6,8 +6,10 @@
   <div class="row display">
     <div
       class=" col-12 offset-0 col-lg-5 offset-lg-1 row d-flex align-items-center justify-content-center   m-0 px-3 px-md-0">
-      <div class="col-12 d-flex align-items-center justify-content-start image">
-        <div class="img w-100 h-100" style="background-image: url({{country?.flags.png}});"></div>
+      <div class="col-12 d-flex align-items-center justify-content-start image position-relative"
+        style="background-image: url({{country?.flags.png}});">
+        <i class="bi bi-aspect-ratio-fill position-absolute top-0 end-0 text-light fs-4 cursorPointer" [ngClass]="{'d-none': flag!=''}"  (click)="flag = country?.flags.png" (click)="openFullscreen()"></i>
+        <!-- <div class="img w-100 h-100" style="background-image: url({{country?.flags.png}});"></div> -->
       </div>
     </div>
     <div class="col-lg-5 offset-lg-1 col-12 offset-0 d-flex align-items-center justify-content-evenly row px-3 px-md-0"
@@ -39,4 +41,8 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class=" position-absolute vw-100 vh-100 img bg-black top-0" *ngIf="flag && flag!=''" style="background-image: url({{flag}});">
+  <i   (click)="closeFullscreen()"     class=" closeBtn bi bi-zoom-out text-light fs-4 cursorPointer"></i>
 </div>
